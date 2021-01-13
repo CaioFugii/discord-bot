@@ -50,6 +50,8 @@ const getEloOf = async (userId) => {
             return getInfoOfUser("MeI1odas")
         case '446465278960861184':
             return getInfoOfUser("V de Volant")
+        case '378317963062935581':
+            return getInfoOfUser("BRP BLACK")
         default:
             return
       }
@@ -108,9 +110,9 @@ const sortRank = (list) => {
             }
             return 0;
         }
-      }
+    }
       
-      return list.sort( sort );
+    return list.sort( sort );
 }
 
 module.exports = services = {
