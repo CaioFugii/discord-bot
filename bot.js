@@ -19,11 +19,6 @@ client.on('message', async message => {
             {files: [userData.image]});
         }
     }
-    
-    if (message.content.startsWith(`${prefix}champion`)) {
-        message.channel.send("My Bot's message", {files: ['./imgs/Emblem_Bronze.png']})
-    }
-
 });
 
 const startBot = () => {
