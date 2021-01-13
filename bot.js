@@ -11,7 +11,7 @@ client.once("ready", () => {
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     
-	if (message.content === `${prefix}me`) {
+	if (message.content === `${prefix}elo`) {
         let [userData] = await services.getEloOf(message.author.id)
         userData = {...userData, image: services.getImage(userData.tier)}
         if(userData){
