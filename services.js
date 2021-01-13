@@ -38,7 +38,6 @@ const getImage = (elo) => {
       }
 }
 
-
 const getEloOf = async (userId) => {
     switch (userId) {
         case '266995531815845889':
@@ -56,7 +55,68 @@ const getEloOf = async (userId) => {
       }
 }
 
+const elo = (elo) => {
+    switch (elo) {
+        case 'IRON':
+            return 0
+        case 'BRONZE':
+            return 1
+        case 'SILVER':
+            return 2
+        case 'GOLD':
+            return 3
+        case 'PLATINUM':
+            return 4
+        case 'DIAMOND':
+            return 5
+        case 'MASTER':
+            return 6
+        case 'GRANDMASTER':
+            return 7
+        case 'CHALLENGER':
+            return 8
+      }
+}
+
+const tier = (tier) => {
+    switch (tier) {
+        case 'I':
+            return 4
+        case 'II':
+            return 3
+        case 'III':
+            return 2
+        case 'IV':
+            return 1
+      }
+} 
+
+
+const sortRank = (list) => {
+    function sort( a, b ) {
+        if ( elo(a.tier) > elo(b.tier) ){
+          return -1;
+        }
+        if ( elo(a.tier) < elo(b.tier) ){
+          return 1;
+        }
+        if ( elo(a.tier) === elo(b.tier) ){
+            if ( tier(a.rank) > tier(b.rank) ){
+                return -1;
+            }
+            if ( tier(a.rank) < tier(b.rank) ){
+                return 1;
+            }
+            return 0;
+        }
+      }
+      
+      return list.sort( sort );
+}
+
 module.exports = services = {
     getEloOf,
-    getImage
+    getImage,
+    getInfoOfUser,
+    sortRank
 }

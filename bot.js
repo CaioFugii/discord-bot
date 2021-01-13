@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { token, prefix } = require('./config.json');
+const { token, prefix, players } = require('./config.json');
 
 const services  = require('./services')
 
@@ -18,6 +18,23 @@ client.on('message', async message => {
             message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's`,
             {files: [userData.image]});
         }
+    }
+
+    if (message.content === `${prefix}rank`) {
+        message.channel.send('Montando ranking aguarde...')
+        let list = []
+        for await (const player of players) {
+            const [data] = await services.getInfoOfUser(player)   
+            if(data !== undefined){
+                list.push(data)
+            }
+        }      
+        const orderList = services.sortRank(list)
+        message.channel.send(`
+            1 - **${orderList[0].summonerName}** (**${orderList[0].tier}** **${orderList[0].rank}**, ${orderList[0].leaguePoints} pdl's) :sunglasses: :star_struck:
+2 - **${orderList[1].summonerName}** (**${orderList[1].tier}** **${orderList[1].rank}**, ${orderList[1].leaguePoints} pdl's)
+3 - **${orderList[2].summonerName}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's)
+4 - **${orderList[3].summonerName}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :face_vomiting:`);
     }
 });
 
