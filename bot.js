@@ -31,11 +31,11 @@ client.on('message', async message => {
         }      
         const orderList = services.sortRank(list)
         message.channel.send(`
-            1 - **${orderList[0].summonerName}** (**${orderList[0].tier}** **${orderList[0].rank}**, ${orderList[0].leaguePoints} pdl's) :sunglasses: :star_struck:
-2 - **${orderList[1].summonerName}** (**${orderList[1].tier}** **${orderList[1].rank}**, ${orderList[1].leaguePoints} pdl's)
-3 - **${orderList[2].summonerName}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's)
-4 - **${orderList[3].summonerName}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :face_vomiting:
-5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :face_vomiting:
+            1 - **${orderList[0].summonerName}** (**${orderList[0].tier}** **${orderList[0].rank}**, ${orderList[0].leaguePoints} pdl's) :sunglasses: :trophy:
+2 - **${orderList[1].summonerName}** (**${orderList[1].tier}** **${orderList[1].rank}**, ${orderList[1].leaguePoints} pdl's) :grin: 
+3 - **${orderList[2].summonerName}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's) :confused: 
+4 - **${orderList[3].summonerName}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :disappointed: 
+5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :nauseated_face: 
 6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :face_vomiting:
 `);
 
