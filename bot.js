@@ -12,14 +12,16 @@ client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     
 	if (message.content === `${prefix}me`) {
-        const [userData] = await services.getRankingOf(message.author.id)
+        let [userData] = await services.getEloOf(message.author.id)
+        userData = {...userData, image: services.getImage(userData.tier)}
         if(userData){
-            message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's`);
+            message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's`,
+            {files: [userData.image]});
         }
     }
-
-    if (message.content === `${prefix}porteiro`) {
-        message.channel.send(`Olá Dinho`);
+    
+    if (message.content.startsWith(`${prefix}champion`)) {
+        message.channel.send("My Bot's message", {files: ['./imgs/Emblem_Bronze.png']})
     }
 
 });

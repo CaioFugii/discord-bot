@@ -8,26 +8,55 @@ const getEloById = async (id) => {
     return data
 };
 
-const getAllInformation = async (userName) => {
+const getInfoOfUser = async (userName) => {
     const { id } = await getSummonerId(userName)
     return await getEloById(id)
 }
 
-const getRankingOf = async (userId) => {
+const getImage = (elo) => {
+    switch (elo) {
+        case 'IRON':
+            return './imgs/Emblem_Iron.png'
+        case 'BRONZE':
+            return './imgs/Emblem_Bronze.png'
+        case 'SILVER':
+            return './imgs/Emblem_Silver.png'
+        case 'GOLD':
+            return './imgs/Emblem_Gold.png'
+        case 'PLATINUM':
+            return './imgs/Emblem_Platinum.png'
+        case 'DIAMOND':
+            return './imgs/Emblem_Diamond.png'
+        case 'MASTER':
+            return './imgs/Emblem_Master.png'
+        case 'GRANDMASTER':
+            return './imgs/Emblem_Grandmaster.png'
+        case 'CHALLENGER':
+            return './imgs/Emblem_Challenger.png'
+        default:
+            return ''
+      }
+}
+
+
+const getEloOf = async (userId) => {
     switch (userId) {
         case '266995531815845889':
-            return getAllInformation("Sheep Raider")
+            return getInfoOfUser("Sheep Raider")
         case '260240988671442944':
-            return getAllInformation("RTZ Snake")
+            return getInfoOfUser("RTZ Snake")
         case '356094664832712705':
-            return getAllInformation("BRP dinhODELICIA")
+            return getInfoOfUser("BRP dinhODELICIA")
         case '485246174937219093':
-            return getAllInformation("MeI1odas")
+            return getInfoOfUser("MeI1odas")
         case '446465278960861184':
-            return getAllInformation("V de Volant")
+            return getInfoOfUser("V de Volant")
+        default:
+            return
       }
 }
 
 module.exports = services = {
-    getRankingOf
+    getEloOf,
+    getImage
 }
