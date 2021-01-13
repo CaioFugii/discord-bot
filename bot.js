@@ -11,13 +11,12 @@ client.once("ready", () => {
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     
-	if (message.content.startsWith(`${prefix}me`)) {
+	if (message.content === `${prefix}me`) {
         const [userData] = await services.getRankingOf(message.author.id)
         message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's`);
     }
 
-
-    if (message.content.startsWith(`${prefix}porteiro`)) {
+    if (message.content === `${prefix}porteiro`) {
         message.channel.send(`Olá Dinho`);
     }
 
