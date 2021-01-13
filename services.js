@@ -108,7 +108,15 @@ const sortRank = (list) => {
             if ( tier(a.rank) < tier(b.rank) ){
                 return 1;
             }
-            return 0;
+            if ( elo(a.rank) === elo(b.rank) ){
+                if ( a.leaguePoints > b.leaguePoints ){
+                    return -1;
+                }
+                if ( a.leaguePoints < b.leaguePoints ){
+                    return 1;
+                }
+                return 0
+            }
         }
     }
       
