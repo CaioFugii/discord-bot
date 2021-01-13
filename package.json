@@ -2,16 +2,18 @@
   "name": "bot-discord",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon bot.js"
+    "start": "nodemon express.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "discord.js": "^12.5.1",
+    "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "teemojs": "^1.6.1"
   }
