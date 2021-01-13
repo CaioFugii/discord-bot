@@ -91,7 +91,6 @@ const tier = (tier) => {
       }
 } 
 
-
 const sortRank = (list) => {
     function sort( a, b ) {
         if ( elo(a.tier) > elo(b.tier) ){
