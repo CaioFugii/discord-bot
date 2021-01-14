@@ -36,8 +36,8 @@ client.on('message', async message => {
 3 - **${orderList[2].summonerName}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's) :confused: 
 4 - **${orderList[3].summonerName}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :disappointed: 
 5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :nauseated_face: 
+6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :face_vomiting:
 `);
-// 6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :face_vomiting:
 
     }
 

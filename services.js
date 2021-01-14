@@ -53,6 +53,8 @@ const getEloOf = async (userId) => {
             return
         case '378317963062935581':
             return getInfoOfUser("BRP BLACK")
+        case '563954244034625536':
+            return getInfoOfUser("zoorelha")
         default:
             return
       }
