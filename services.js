@@ -10,7 +10,12 @@ const getEloById = async (id) => {
 };
 
 const getInfoOfUser = async (userName) => {
-    const { id } = await getSummonerId(userName)
+    const result = await getSummonerId(userName)
+    
+    if(!result) return []
+
+    const { id } = result
+
     return await getEloById(id)
 }
 

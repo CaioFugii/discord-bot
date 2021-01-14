@@ -2,7 +2,7 @@ const { TOKEN } = process.env;
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { prefix, players } = require('./config.json');
+const { prefix, players, comandos } = require('./config.json');
 
 const services  = require('./services')
 
@@ -15,8 +15,8 @@ client.on('message', async message => {
     
 	if (message.content === `${prefix}elo`) {
         let [userData] = await services.getEloOf(message.author.id)
-        userData = {...userData, image: services.getImage(userData.tier)}
         if(userData){
+            userData = {...userData, image: services.getImage(userData.tier)}
             message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's`,
             {files: [userData.image]});
         }
@@ -41,6 +41,15 @@ client.on('message', async message => {
 6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :nauseated_face: 
 7 - **${orderList[6].summonerName}** (**${orderList[6].tier}** **${orderList[6].rank}**, ${orderList[6].leaguePoints} pdl's) :face_vomiting:
 `);
+    }
+
+    if(message.content === `${prefix}nick`) {
+        const player = players.find(element => element.id === message.author.id)
+        message.channel.send(`Seu nick cadastrado no bot é: **${player.nick}**, caso tenha trocado de nick dentro do jogo, peça para o moderador fazer essa alteração aqui no bot.`);
+    }
+
+    if(message.content === `${prefix}comandos`) {
+        message.channel.send(`Estes são os comandos que eu reconheço: ${comandos}`);
     }
 
     if(message.content === `${prefix}id`){

@@ -4,7 +4,7 @@
     "players": [
         {
             "id":"266995531815845889",
-            "nick":"SheRaider"
+            "nick":"Sheep Raider"
         },
         {
             "id":"260240988671442944",
@@ -30,5 +30,6 @@
             "id":"563954244034625536",
             "nick":"zoorelha"
         }
-    ]
+    ],
+    "comandos":["!elo", "!rank", "!nick"]
 }
