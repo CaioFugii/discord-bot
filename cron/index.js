@@ -10,8 +10,9 @@ const createInstance = (url) => {
 const instance = (url) => createInstance(url);
 
 const cronRoutine = () => {
-    cron.schedule('* 9-23 * * *', async () => {
-      return await instance('https://brp-discordbot.herokuapp.com').get(`/`)
+    cron.schedule('*/25 9-23 * * *', async () => {
+      const { data } = await instance('https://brp-discordbot.herokuapp.com').get('/')
+      return data
     },{
       timezone: "America/Sao_Paulo"
     });
