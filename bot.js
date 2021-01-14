@@ -26,7 +26,7 @@ client.on('message', async message => {
         message.channel.send('Montando ranking aguarde...')
         let list = []
         for await (const player of players) {
-            const [data] = await services.getInfoOfUser(player)   
+            const [data] = await services.getInfoOfUser(player.nick)   
             if(data !== undefined){
                 list.push(data)
             }
