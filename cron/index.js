@@ -1,14 +1,9 @@
 const axios = require('axios')
 const cron = require('node-cron');
 
-const createInstance = (url) => {
-    let headers = {
-      "X-Riot-Token": api_league,
-    };
-    
+const createInstance = (url) => {  
     return axios.create({
-      baseURL: url,
-      headers,
+      baseURL: url
     });
   };
 
