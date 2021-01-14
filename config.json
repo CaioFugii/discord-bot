@@ -1,7 +1,34 @@
 
 {
     "prefix":"!",
-    "token":"Nzk4OTExNTIzMzk3MTczMjY4.X_76Vg.8X7pB-W2sml7CN-24T1Que0Iq1k",
-    "api_league": "RGAPI-bcb155f6-6195-4081-aa87-7e4fdc66e3df",
-    "players": ["Sheep Raider", "RTZ Snake", "BRP dinhODELICIA", "MeI1odas", "zoorelha","BRP BLACK"]
+    "players": [
+        {
+            "id":"266995531815845889",
+            "nick":"SheRaider"
+        },
+        {
+            "id":"260240988671442944",
+            "nick":"RTZ Snake"
+        }, 
+        {
+            "id":"356094664832712705",
+            "nick":"BRP dinhODELICIA"
+        }, 
+        {
+            "id":"485246174937219093",
+            "nick":"MeI1odas"
+        }, 
+        {
+            "id":"446465278960861184",
+            "nick":"V de Volant"
+        }, 
+        {
+            "id":"378317963062935581",
+            "nick":"BRP BLACK"
+        }, 
+        {
+            "id":"563954244034625536",
+            "nick":"zoorelha"
+        }
+    ]
 }

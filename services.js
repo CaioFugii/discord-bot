@@ -1,4 +1,5 @@
 const axios  = require("./axios");
+const config = require("./config.json")
 const { getSummonerId } = require("./teemo");
 
 const instance = (url) => axios.createInstance(url);
@@ -39,25 +40,9 @@ const getImage = (elo) => {
 }
 
 const getEloOf = async (userId) => {
-    switch (userId) {
-        case '266995531815845889':
-            return getInfoOfUser("Sheep Raider")
-        case '260240988671442944':
-            return getInfoOfUser("RTZ Snake")
-        case '356094664832712705':
-            return getInfoOfUser("BRP dinhODELICIA")
-        case '485246174937219093':
-            return getInfoOfUser("MeI1odas")
-        case '446465278960861184':
-            // return getInfoOfUser("V de Volant")
-            return
-        case '378317963062935581':
-            return getInfoOfUser("BRP BLACK")
-        case '563954244034625536':
-            return getInfoOfUser("zoorelha")
-        default:
-            return
-      }
+    const player = config.players.find(player => player.id === userId)
+    if(!player) return
+    return await getInfoOfUser(player.nick)
 }
 
 const elo = (elo) => {
