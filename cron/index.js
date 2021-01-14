@@ -15,7 +15,7 @@ const createInstance = (url) => {
 const instance = (url) => createInstance(url);
 
 const cronRoutine = () => {
-    cron.schedule('*/25 9-23 * * *', async () => {
+    cron.schedule('* 9-23 * * *', async () => {
       return await instance('https://brp-discordbot.herokuapp.com').get(`/`)
     },{
       timezone: "America/Sao_Paulo"
