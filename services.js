@@ -1,6 +1,5 @@
 const axios  = require("./axios");
 const config = require("./config.json")
-const { getSummonerId } = require("./teemo");
 
 const instance = (url) => axios.createInstance(url);
 
@@ -8,6 +7,11 @@ const getEloById = async (id) => {
     const { data } = await instance('https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner').get(`/${id}`);
     return data
 };
+
+const getSummonerId = async (userName) => {
+    const { data } = await instance('https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name').get(`/${userName}`);
+    return data
+}
 
 const getInfoOfUser = async (userName) => {
     const result = await getSummonerId(userName)
