@@ -1,7 +1,11 @@
-const { PORT } = process.env;
+const { PORT, NODE_ENV } = process.env;
 
 const express = require('express');
 const http = require('http')
+
+if (!NODE_ENV || NODE_ENV === 'development') {
+    require('dotenv').config();
+}
 
 const app = express();
 
