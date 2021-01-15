@@ -39,11 +39,13 @@ client.on('message', async message => {
 2 - **${orderList[1].summonerName}** (**${orderList[1].tier}** **${orderList[1].rank}**, ${orderList[1].leaguePoints} pdl's) :grin: ${orderList[1].hotStreak ? ':fire: HotStreak' : ''}
 3 - **${orderList[2].summonerName}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's) :confused: ${orderList[2].hotStreak ? ':fire: HotStreak' : ''}
 4 - **${orderList[3].summonerName}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :disappointed: ${orderList[3].hotStreak ? ':fire: HotStreak' : ''}
-5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :disappointed_relieved: ${orderList[4].hotStreak ? ':fire: HotStreak' : ''}
-6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :nauseated_face: ${orderList[5].hotStreak ? ':fire: HotStreak' : ''}
-7 - **${orderList[6].summonerName}** (**${orderList[6].tier}** **${orderList[6].rank}**, ${orderList[6].leaguePoints} pdl's) :face_vomiting: ${orderList[6].hotStreak ? ':fire: HotStreak' : ''}
+5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :neutral_face: ${orderList[4].hotStreak ? ':fire: HotStreak' : ''}
+6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :disappointed_relieved: ${orderList[5].hotStreak ? ':fire: HotStreak' : ''}
+7 - **${orderList[6].summonerName}** (**${orderList[6].tier}** **${orderList[6].rank}**, ${orderList[6].leaguePoints} pdl's) :nauseated_face: ${orderList[6].hotStreak ? ':fire: HotStreak' : ''}
+8 - **${orderList[7].summonerName}** (**${orderList[7].tier}** **${orderList[7].rank}**, ${orderList[7].leaguePoints} pdl's) :face_vomiting: ${orderList[7].hotStreak ? ':fire: HotStreak' : ''}
 `);
     }
+    // 
 
     if(message.content === `${prefix}nick`) {
         const player = players.find(element => element.id === message.author.id)
