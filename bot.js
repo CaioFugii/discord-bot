@@ -18,7 +18,7 @@ client.on('message', async message => {
         if(userData){
             userData = {...userData, image: services.getImage(userData.tier)}
             message.channel.send(`Olá **${userData.summonerName}**, seu elo dentro de jogo é **${userData.tier}** **${userData.rank}**, ${userData.leaguePoints} pdl's.
-    Atualmente você está com **${userData.wins} vitórias** / **${userData.losses} derrotas**.
+    Atualmente você está com **${userData.wins} vitórias** / **${userData.losses} derrotas**, Winrate de **${Math.floor(userData.wins/(userData.wins + userData.losses) * 100)} %**.
             `,
             {files: [userData.image]});
         }
