@@ -33,6 +33,10 @@
         {
             "id":"245544184927354890",
             "nick":"Stalo"
+        },
+        {
+            "id":"330784840712454149",
+            "nick":"PaiN Twitch"
         }
     ],
     "comandos":["!elo", "!rank", "!nick"]
