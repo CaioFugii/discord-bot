@@ -62,6 +62,10 @@ client.on('message', async message => {
         message.channel.send(`Estes são os comandos que eu reconheço: ${comandos}`);
     }
 
+    if(message.content === `${prefix}link`) {
+        message.channel.send('Para acordar o bot entre nesse link : https://brp-discordbot.herokuapp.com');
+    }
+
     if(message.content === `${prefix}id`){
         console.log(message.channel.members)
     }

@@ -39,5 +39,5 @@
             "nick":"PaiN Twitch"
         }
     ],
-    "comandos":["!elo", "!rank", "!nick"]
+    "comandos":["!elo", "!rank", "!nick", "!link"]
 }
