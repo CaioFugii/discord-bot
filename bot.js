@@ -19,7 +19,11 @@ client.on('message', async message => {
         let data = userData.find(ele => ele.queueType == 'RANKED_SOLO_5x5')
 
         if(data){
-            data = {...data, image: services.getImage(data.tier)}
+            if(message.author.id === "356094664832712705"){
+                data = {...data, image: './imgs/65.png'}
+            }else{
+                data = {...data, image: services.getImage(data.tier)}
+            }
             message.channel.send(`Olá **${data.summonerName}**, seu elo dentro de jogo é **${data.tier}** **${data.rank}**, ${data.leaguePoints} pdl's.
     Atualmente você está com **${data.wins} vitórias** / **${data.losses} derrotas**, Winrate de **${Math.floor(data.wins/(data.wins + data.losses) * 100)} %**.
             `,
@@ -60,10 +64,6 @@ client.on('message', async message => {
 
     if(message.content === `${prefix}comandos`) {
         message.channel.send(`Estes são os comandos que eu reconheço: ${comandos}`);
-    }
-
-    if(message.content === `${prefix}link`) {
-        message.channel.send('Para acordar o bot entre nesse link : https://brp-discordbot.herokuapp.com');
     }
 
     if(message.content === `${prefix}id`){
