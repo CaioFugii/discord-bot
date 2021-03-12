@@ -48,8 +48,8 @@ client.on('message', async message => {
 5 - **${orderList[4].summonerName}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :disappointed: ${orderList[4].hotStreak ? ':fire: ***HotStreak***' : ''}
 6 - **${orderList[5].summonerName}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :disappointed_relieved: ${orderList[5].hotStreak ? ':fire: ***HotStreak***' : ''}
 7 - **${orderList[6].summonerName}** (**${orderList[6].tier}** **${orderList[6].rank}**, ${orderList[6].leaguePoints} pdl's) :nauseated_face: ${orderList[6].hotStreak ? ':fire: ***HotStreak***' : ''}
-7 - **${orderList[7].summonerName}** (**${orderList[7].tier}** **${orderList[7].rank}**, ${orderList[7].leaguePoints} pdl's) :face_vomiting: ${orderList[7].hotStreak ? ':fire: ***HotStreak***' : ''}
-8 - **${orderList[8].summonerName}** (**${orderList[8].tier}** **${orderList[8].rank}**, ${orderList[8].leaguePoints} pdl's) :skull_crossbones: ${orderList[8].hotStreak ? ':fire: ***HotStreak***' : ''}
+8 - **${orderList[7].summonerName}** (**${orderList[7].tier}** **${orderList[7].rank}**, ${orderList[7].leaguePoints} pdl's) :face_vomiting: ${orderList[7].hotStreak ? ':fire: ***HotStreak***' : ''}
+9 - **${orderList[8].summonerName}** (**${orderList[8].tier}** **${orderList[8].rank}**, ${orderList[8].leaguePoints} pdl's) :skull_crossbones: ${orderList[8].hotStreak ? ':fire: ***HotStreak***' : ''}
 `);
     }
 
