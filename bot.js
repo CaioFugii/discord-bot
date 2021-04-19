@@ -8,8 +8,6 @@ const services  = require('./services')
 
 client.once("ready", () => {
     console.log(`Bot foi iniciado!`);
-
-    message.channel.send(`Bot foi iniciado!`);
 })
 
 client.on('message', async message => {
