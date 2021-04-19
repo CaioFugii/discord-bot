@@ -8,19 +8,24 @@ const getSummonerId = async (userName) => {
     return data
 }
 
-const getEloById = async (id) => {
+const getEloSoloDuo = async (id) => {
     const { data } = await instance('https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner').get(`/${id}`);
     return data
 };
 
-const getInfoOfUser = async (userName) => {
+const getEloTFT = async (id) => {
+    const { data } = await instance('https://br1.api.riotgames.com/tft/league/v1/entries/by-summoner').get(`/${id}`);
+    return data
+};
+
+const getInfoOfUser = async (userName, type) => {
     const result = await getSummonerId(userName)
     
     if(!result) return []
 
     const { id } = result
 
-    return await getEloById(id)
+    return  type === 'solo-duo' ? await getEloSoloDuo(id) : await getEloTFT(id)
 }
 
 const getImage = (elo) => {
@@ -48,10 +53,10 @@ const getImage = (elo) => {
       }
 }
 
-const getEloOf = async (userId) => {
+const getEloOf = async (userId, type) => {
     const player = config.players.find(player => player.id === userId)
     if(!player) return
-    return await getInfoOfUser(player.nick)
+    return await getInfoOfUser(player.nick, type)
 }
 
 const elo = (elo) => {
