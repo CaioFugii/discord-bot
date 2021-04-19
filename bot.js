@@ -49,22 +49,13 @@ client.on('message', async message => {
 
             let data = userData.find(ele => ele.queueType == 'RANKED_SOLO_5x5')
 
-            if(data !== undefined){
+            if(data){
                 list.push(data)
             }
         }      
-        const orderList = services.sortRank(list)
-        message.channel.send(`
-            1 - **${orderList[0].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}**  (**${orderList[0].tier}** **${orderList[0].rank}**, ${orderList[0].leaguePoints} pdl's) :sunglasses: :trophy: ${orderList[0].hotStreak ? ':fire: ***HotStreak***' : ''}
-2 - **${orderList[1].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}**(**${orderList[1].tier}** **${orderList[1].rank}**, ${orderList[1].leaguePoints} pdl's) :grin: ${orderList[1].hotStreak ? ':fire: ***HotStreak***' : ''}
-3 - **${orderList[2].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[2].tier}** **${orderList[2].rank}**, ${orderList[2].leaguePoints} pdl's) :confused: ${orderList[2].hotStreak ? ':fire: ***HotStreak***' : ''}
-4 - **${orderList[3].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[3].tier}** **${orderList[3].rank}**, ${orderList[3].leaguePoints} pdl's) :neutral_face: ${orderList[3].hotStreak ? ':fire: ***HotStreak***' : ''}
-5 - **${orderList[4].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[4].tier}** **${orderList[4].rank}**, ${orderList[4].leaguePoints} pdl's) :disappointed: ${orderList[4].hotStreak ? ':fire: ***HotStreak***' : ''}
-6 - **${orderList[5].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[5].tier}** **${orderList[5].rank}**, ${orderList[5].leaguePoints} pdl's) :disappointed_relieved: ${orderList[5].hotStreak ? ':fire: ***HotStreak***' : ''}
-7 - **${orderList[6].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[6].tier}** **${orderList[6].rank}**, ${orderList[6].leaguePoints} pdl's) :nauseated_face: ${orderList[6].hotStreak ? ':fire: ***HotStreak***' : ''}
-8 - **${orderList[7].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[7].tier}** **${orderList[7].rank}**, ${orderList[7].leaguePoints} pdl's) :face_vomiting: ${orderList[7].hotStreak ? ':fire: ***HotStreak***' : ''}
-9 - **${orderList[8].summonerName === "BRP dinhODELICIA" ? ':man_police_officer: :door:' : ''}** (**${orderList[8].tier}** **${orderList[8].rank}**, ${orderList[8].leaguePoints} pdl's) :skull_crossbones: ${orderList[8].hotStreak ? ':fire: ***HotStreak***' : ''}
-`);
+        const orderList = services.sortAndSetupRank(list)
+
+        message.channel.send(orderList)
     }
 
     if(message.content === `${prefix}nick`) {

@@ -92,10 +92,18 @@ const tier = (tier) => {
             return 2
         case 'IV':
             return 1
-      }
+    }
 } 
+                     
+const setUpRank = (list) => {
+  return list.map((userData, index) => {
+        const { summonerName, tier, rank, leaguePoints, hotStreak } = userData
+        
+        return `${index + 1} - **${summonerName}**  (**${tier} ${rank}** , ${leaguePoints} pdl's)${hotStreak ? ' :fire: **HotStreak**': ''} ${summonerName === "BRP dinhODELICIA" ? ':door: :man_police_officer:' : ''}`
+    })
+}
 
-const sortRank = (list) => {
+const sortAndSetupRank = (list) => {
     function sort( a, b ) {
         if ( elo(a.tier) > elo(b.tier) ){
           return -1;
@@ -122,12 +130,14 @@ const sortRank = (list) => {
         }
     }
       
-    return list.sort( sort );
+    const orderList = list.sort( sort );
+
+    return setUpRank(orderList)
 }
 
 module.exports = services = {
     getEloOf,
     getImage,
     getInfoOfUser,
-    sortRank
+    sortAndSetupRank,
 }
