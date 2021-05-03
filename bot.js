@@ -13,7 +13,7 @@ client.once("ready", () => {
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     
-	if (message.content === `${prefix}elo-soloduo`) {
+	if (message.content === `${prefix}elo`) {
         const userData = await services.getEloOf(message.author.id, 'solo-duo')
 
         let data = userData.find(ele => ele.queueType == 'RANKED_SOLO_5x5')
@@ -41,7 +41,7 @@ client.on('message', async message => {
     //     }
     // }
 
-    if (message.content === `${prefix}rank-soloduo`) {
+    if (message.content === `${prefix}rank`) {
         message.channel.send('Montando ranking SOLO-DUO aguarde...')
         let list = []
         for await (const player of players) {
